@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+    </head>
+    <body>
+        
+            <form method="get" action="/process.php">
+                <table cellspacing="5" id="contact-form">
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" id="name" name="name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <input type="email" id="email" name="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>
+                            <input type="tel" id="tel" name="tel" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Which taxi do you require?</legend>
+                                <input type="radio" name="taxi" value="car" /> Car <br /><br />
+                                <input type="radio" name="taxi" value="van" /> Van <br /><br />
+                                <input type="radio" name="taxi" value="tuktuk" /> Tuk Tuk <br /><br />
+                            </fieldset>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>Pick Date/Time</td>
+                        <td>
+                            <input type="datetime-local" id="time" name="time" required />
+                        </td>
+                    </tr>
+ <!--toi day-->
+                     <tr>
+                        <td colspan="2">
+                            <select id="pickup_place" name="pickup_place">
+                                <option value="" selected>Select One</option>
+                                <option value="office" >Taxi Office</option>
+                                <option value="town_hall">Town Hall</option>
+                                <option value="telepathy">We'll Guess!</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                <label for="pickup_place"></label>
+                <select id="pickup_place" name="pickup_place">
+                    <option value="" selected>Select One</option>
+                    <option value="office" >Taxi Office</option>
+                    <option value="town_hall">Town Hall</option>
+                    <option value="telepathy">We'll Guess!</option>
+                </select>
+                <br /><br />
+    
+                <label for="dropoff_place">Dropoff Place</label>
+                <input
+                    type="text"
+                    id="dropoff_place"
+                    name="dropoff_place"
+                    required
+                    list="destinations"
+                /><br />
+                <datalist id="destinations">
+                    <option value="Airport"></option>
+                    <option value="Beach"></option>
+                    <option value="Fred Flinstone's House"></option>
+                </datalist>
+                <br />
+                <label for="comments">Special Instructions</label>
+                <textarea name="comments" id="comments" maxlength="500"></textarea>
+                <br /><br />
+                <input type="submit" value="Submit Booking" />
+                </table>
+            </form>
+    </body>
+</html>
